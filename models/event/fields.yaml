@@ -1,0 +1,68 @@
+fields:
+    is_active:
+        label: Is Active
+        type: switch
+        span: full
+    title:
+        label: Title
+        type: text
+        span: full
+    categories:
+        label: Categories
+        type: relation
+        span: full
+        select: name
+    start_date:
+        label: Start Date
+        span: auto
+        type: datepicker
+        mode: date
+        format: Y-m-d
+        attributes: 
+          readOnly: 'readOnly'
+    start_time:
+        label: Start Time
+        span: auto
+        type: datepicker
+        mode: time
+        dependsOn: [all_day]
+        attributes: 
+          readOnly: 'readOnly'
+    all_day:
+        label: All Day
+        type: switch
+        span: full
+        on: "Yes"
+        off: "No"
+    has_end_date:
+        label: Has End Date
+        type: switch
+        span: full
+        on: "Yes"
+        off: "No"
+    end_date:
+        label: End Date
+        span: auto
+        type: datepicker
+        mode: date
+        format: Y-m-d
+        dependsOn: [has_end_date]
+        attributes: 
+          readOnly: 'readOnly'
+    end_time:
+        label: End Time
+        span: auto
+        type: datepicker
+        mode: time
+        dependsOn: [all_day,has_end_date]
+        attributes: 
+          readOnly: 'readOnly'
+    color:
+        label: Color
+        type: colorpicker
+        span: full
+    description:
+        label: Description
+        type: richeditor
+        span: full
+        size: huge
